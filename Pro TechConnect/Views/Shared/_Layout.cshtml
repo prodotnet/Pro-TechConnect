@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro  TechConnect</title>
+    <title>TechConnect</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PhoneShop.styles.css" asp-append-version="true" />
@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pro TechConnect</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TechConnect</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,19 +38,18 @@
 
                     </ul>
                     <ul class="navbar-nav ms-auto">
-
-
                         <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-controller="" asp-action="Index">
-                                <div class="cart-icon">
-                                    <p class="count" id="count">0</p>
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </div>
+                            <a class="nav-link text-success" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
 
+                        <li class="nav-item position-relative">
+                            <a class="nav-link text-success" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count" class="badge bg-warning position-absolute top-0 start-100 translate-middle">0</span>
                             </a>
                         </li>
-                        <li class="nav-item gap-sm-4">
-                            <a class="nav-link text-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="#">Login</a>
                         </li>
                     </ul>
                 </div>
