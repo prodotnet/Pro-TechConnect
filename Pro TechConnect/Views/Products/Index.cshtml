@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Pro_TechConnect.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                @if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    <img src="@product.ImageUrl" class="card-img-top" alt="Product Image">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Price: $@product.Price</p>
+                    <p class="card-text">Category: @product.Category.Name</p>
+                    <div class="text-center">
+                        <a href="@Url.Action("Details", "Products", new { id = product.ProductId })" class="btn btn-primary">Details</a>
+                        <a href="@Url.Action("Edit", "Products", new { id = product.ProductId })" class="btn btn-secondary">Edit</a>
+                        <a href="@Url.Action("Delete", "Products", new { id = product.ProductId })" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

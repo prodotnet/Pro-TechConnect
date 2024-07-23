@@ -5,8 +5,13 @@ namespace Pro_TechConnect.Data
 {
     public class ProTechConnectDbContext:DbContext
     {
+
+        // Constructor for ProTechConnectDbContext that accepts DbContextOptions
+        // This constructor is required for dependency injection when initializing the context.
         public ProTechConnectDbContext(DbContextOptions<ProTechConnectDbContext> options) : base(options) { }
 
+
+        // Define DbSet properties for each entity/table in your database
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
